@@ -14,7 +14,10 @@ const stateFromProps = (props) => {
     items.push({ value: child.props.value, label: child.props.label });
   });
 
-  return { selectedIndex, items };
+  var textSize = props.itemStyle.fontSize;
+  var textColor = props.itemStyle.color;
+
+  return { selectedIndex, items, textSize, textColor};
 };
 
 class WheelCurvedPicker extends PureComponent {
@@ -59,8 +62,8 @@ class WheelCurvedPicker extends PureComponent {
         {...this.props}
         onValueChange={this.onValueChange}
         data={this.state.items}
-        textColor={this.props.textColor}
-        textSize={this.props.textSize}
+        textColor={this.state.textColor}
+        textSize={this.state.textSize}
         selectedIndex={parseInt(this.state.selectedIndex, 10)}
       />
     );
