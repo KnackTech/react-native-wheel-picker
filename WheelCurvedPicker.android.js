@@ -28,6 +28,12 @@ class WheelCurvedPicker extends PureComponent {
     onValueChange: PropTypes.func.isRequired,
     selectedValue: PropTypes.any,
     selectedIndex: PropTypes.number,
+    cyclic: PropTypes.bool,
+		curved: PropTypes.bool,
+		atmospheric: PropTypes.bool,
+		indicator: PropTypes.bool,
+		indicatorColor: ColorPropType,
+		indicatorSize: PropTypes.number
   };
 
   static defaultProps = {
